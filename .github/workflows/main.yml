@@ -12,6 +12,9 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      
+    - name: Copy Docker config
+      run: cp .github/docker/config.json ~/.docker/config.json
 
     - name: Build the Docker image
       run: docker build -t fahimhassandoc/to-do:latest .
